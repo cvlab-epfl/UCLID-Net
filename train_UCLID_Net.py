@@ -251,7 +251,7 @@ for epoch in range(opt.nepoch):
   network.eval()
   with torch.no_grad():
     for i, data in enumerate(dataloader_test, 0):
-      points, img, depth_maps, _, camRt, _, mesh_name = data
+      points, img, depth_maps, _, camRt, _, mesh_name, _ = data
       points = points.cuda()
       B_size = points.shape[0]
       img = img.cuda()
