@@ -211,8 +211,8 @@ for epoch in range(opt.nepoch):
 
   # Manual learning rate schedule
   if epoch == 100:
-    lr = lr / 10.0
-    optimizer = torch.optim.Adam(network.parameters(), lr=lr,
+    lrate = lrate / 10.0
+    optimizer = torch.optim.Adam(network.parameters(), lr=lrate,
                                 betas=(0.9, 0.999), eps=1e-08, weight_decay=4e-5)
 
     

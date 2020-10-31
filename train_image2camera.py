@@ -140,7 +140,7 @@ for epoch in range(opt.nepoch):
 
   # Manual learning rate schedule
   if epoch == 100:
-    lr = lr / 10.0
+    lrate = lrate / 10.0
     optimizer = optim.Adam(network.parameters(), lr=lrate)
 
     
