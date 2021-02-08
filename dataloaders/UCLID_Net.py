@@ -16,9 +16,9 @@ POINTCLOUD_PATH = 'SurfaceSamples'
 RENDERING_PATH = 'renderings_rgb'
 
 ## DEPTH MAPS PATH
-# Groung truth depth maps (un-clipped).
+# Ground truth depth maps (un-clipped).
 #DEPTHMAP_PATH = 'renderings_depth'
-# Predicted depth maps (depth regrssion model trained on ALL CLASSES) (un-clipped)
+# Predicted depth maps (depth regression model trained on ALL CLASSES) (un-clipped)
 DEPTHMAP_PATH = 'inferred_depth'
 
 ## CAMERA OPTIONS

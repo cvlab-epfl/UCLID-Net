@@ -16,7 +16,7 @@ POINTCLOUD_PATH = 'SurfaceSamples'
 RENDERING_PATH = 'renderings_rgb'
 
 ## DEPTH MAPS PATH
-# Groung truth depth maps (un-clipped).
+# Ground truth depth maps (un-clipped).
 DEPTHMAP_PATH = 'renderings_depth'
 
 

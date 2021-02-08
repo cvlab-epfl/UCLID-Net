@@ -5,6 +5,7 @@ import os
 from numpy.lib import recfunctions as rfn
 import imageio
 import time
+import trimesh
 import torchvision
 from PIL import Image
 
@@ -22,11 +23,17 @@ def get_instance_filenames(split):
 
 def unpack_pointcloud(filename, subsample=12000, bounding_box=1.):
   # 1: Load raw points and subsample
+  """
   plydata = PlyData.read(filename)
   total_points = plydata['vertex'].count
   point_sampling = np.random.choice(total_points, subsample, replace=False)
   points = plydata['vertex'][point_sampling]
   points = rfn.structured_to_unstructured(points)  # remove (x,y,z) labels given by PlyData
+  """
+  mesh = trimesh.load(filename)
+  total_points = mesh.vertices.shape[0]
+  point_sampling = np.random.choice(total_points, subsample, replace=False)
+  points = mesh.vertices[point_sampling]
   # 2: Normalize to desired bounding box
   # compute the translation and scaling that bring these points to desired bounding box
   translation = [-0.5 * (points[:, 0].min() + points[:, 0].max()),

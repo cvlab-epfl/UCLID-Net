@@ -29,8 +29,6 @@ parser.add_argument('--nb_cells', type=int, default=28,
       help='grid size of the cuboid output')
 parser.add_argument('--n_2D_featuremaps', type=int, default=292,
       help='# of 2D feature maps at the bottom of the UNet-like architecture')
-parser.add_argument('--output_dir', type=str, default="output/",
-      help='where to log outputs')
 parser.add_argument('--test_point_samples', type=int, default=50,
       help='# of points samples per voxel generated')
 parser.add_argument('--pts_for_chd', type=int, default=2048,
